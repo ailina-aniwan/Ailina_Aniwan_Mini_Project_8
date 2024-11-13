@@ -8,27 +8,27 @@ rust-version:
 	clippy-driver --version      # Rust linter
 
 rust_install:
-	cargo install --path .
+	cargo install --path ./sqlite
 
 rust_format:
-	cargo fmt --quiet
+	cargo fmt --quiet --manifest-path ./sqlite/Cargo.toml
 
 rust_lint:
-	cargo clippy --quiet
+	cargo clippy --quiet --manifest-path ./sqlite/Cargo.toml
 
 rust_test:
-	cargo test --quiet
+	cargo test --quiet --manifest-path ./sqlite/Cargo.toml
 
 rust_run:
-	cargo run
+	cargo run --manifest-path ./sqlite/Cargo.toml
 
 rust_build:
-	cargo build --release
+	cargo build --release --manifest-path ./sqlite/Cargo.toml
 
 rust_release:
-	cargo build --release
+	cargo build --release --manifest-path ./sqlite/Cargo.toml
 
-rust_all: format lint test run
+rust_all: rust_format rust_lint rust_test rust_run
 
 # Python commands
 python_install:
@@ -48,3 +48,4 @@ python_all: python_install python_format python_lint python_test
 
 # Run all checks
 check: python_all rust_all
+
