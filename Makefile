@@ -43,7 +43,8 @@ python_lint:
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
 
 python_test:
-	python -m pytest --cov=main test_main.py
+	python -m pytest --cov=main test.py
+
 
 python_all: python_install python_format python_lint python_test
 
