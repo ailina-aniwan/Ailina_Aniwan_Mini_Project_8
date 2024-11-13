@@ -45,3 +45,6 @@ python_test:
 	python -m pytest --cov=main test_main.py
 
 python_all: python_install python_format python_lint python_test
+
+# Run all checks
+check: python_all rust_all
