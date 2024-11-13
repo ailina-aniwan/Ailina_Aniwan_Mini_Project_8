@@ -4,6 +4,6 @@ Filter all records where age is above a threshold, then compute the average age 
 
 | Metric            | Python                |
 |-------------------|-----------------------|
-| Execution Time    | 0.31 ms               |
+| Execution Time    | 0.29 ms               |
 | Memory Usage      | 49152.00 KB             |
 | Average Age       | 49.73               |

@@ -4,5 +4,5 @@ Filter all records where age is above a threshold, then compute the average age 
 | Metric            | Rust                  |
 |-------------------|-----------------------|
 | Execution Time    | 0.16 ms               |
-| Memory Usage      | 32768 KB                |
+| Memory Usage      | 65536 KB                |
 | Average Age       | 49.73                 |

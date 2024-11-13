@@ -20,7 +20,8 @@ rust_test:
 	cargo test --quiet --manifest-path ./sqlite/Cargo.toml
 
 rust_run:
-	cargo run --manifest-path ./sqlite/Cargo.toml
+	cd sqlite && cargo run --release
+
 
 rust_build:
 	cargo build --release --manifest-path ./sqlite/Cargo.toml
