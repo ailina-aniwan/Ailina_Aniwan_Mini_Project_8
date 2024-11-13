@@ -1,0 +1,41 @@
+name: Rust CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install Rust dependencies
+        run: make rust_install
+
+      - name: Lint Rust code
+        run: make rust_lint
+
+      - name: Format Rust code
+        run: make rust_format
+
+      - name: Build Rust project
+        run: make rust_build
+
+      - name: Run Rust tests
+        run: make rust_test
+
+      - name: Run Rust application
+        run: make rust_run
