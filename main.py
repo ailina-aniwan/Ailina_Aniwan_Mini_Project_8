@@ -35,11 +35,11 @@ if __name__ == "__main__":
     peak_memory_usage = max(
         memory_usage((filter_and_average_age_streaming, (path_to_csv, age_threshold)))
     )
-    memory_usage_kb = peak_memory_usage * 1024
+    peak_memory_kb = peak_memory_usage * 1024
 
     start_time = time.time()
     calculated_avg_age = filter_and_average_age_streaming(path_to_csv, age_threshold)
     end_time = time.time()
     execution_time = end_time - start_time
 
-    generate_performance_report(execution_time, memory_usage_kb, calculated_avg_age)
+    generate_performance_report(execution_time, peak_memory_kb, calculated_avg_age)

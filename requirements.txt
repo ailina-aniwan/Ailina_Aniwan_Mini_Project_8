@@ -6,3 +6,4 @@ pylint==2.15.3
 ruff==0.0.284
 pandas==2.0.3  
 psutil==6.0.0 
+memory-profiler==0.61.0
