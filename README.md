@@ -1,77 +1,28 @@
-[![CI](https://github.com/nogibjj/Ailina_Aniwan_Mini_Project_7/actions/workflows/CI.yml/badge.svg)](https://github.com/nogibjj/Ailina_Aniwan_Mini_Project_7/actions/workflows/CI.yml)
-# IDS706 - Mini Project 7 - Ailina Aniwan
+[![Python CI/CD](https://github.com/ailina-aniwan/Ailina_Aniwan_Mini_Project_8/actions/workflows/python.yml/badge.svg)](https://github.com/ailina-aniwan/Ailina_Aniwan_Mini_Project_8/actions/workflows/python.yml) [![Rust CI/CD](https://github.com/ailina-aniwan/Ailina_Aniwan_Mini_Project_8/actions/workflows/rust.yml/badge.svg)](https://github.com/ailina-aniwan/Ailina_Aniwan_Mini_Project_8/actions/workflows/rust.yml)
+# IDS706 - Mini Project 8 - Ailina Aniwan
 
-## Package a Command-Line Tool in Rust
+## Rewrite a Python Script in Rust
 
 ## ✔️ Project Overview
-This project is a Rust-based command-line tool for performing basic SQL operations (Create, Read, Load, and Delete) on a SQLite database. It provides a straightforward CLI interface, allowing users to manage tables and data through simple commands. The tool leverages Rust’s `clap` library for command-line argument parsing, `rusqlite` for database interaction, and `csv` for data loading.
+This project aims to compare the performance of data processing scripts written in Python and Rust. The goal is to rewrite an existing Python script in Rust and demonstrate improvements in execution speed and memory usage. This comparison highlights the efficiency of Rust over Python in handling data-intensive tasks, providing insights into potential benefits when using Rust for similar workloads.
 
 ## ✔️ Project Requirements
-- Package a Python script with setuptools or a similar tool (We opted for Rust).
-- Include communication with an external or internal database (SQLite in this case).
-- Provide functionality and user guidance.
+- **Rewrite Python Script in Rust**: Convert an existing Python data processing script to Rust.
+- **Highlight Performance Improvements**: Identify improvements in speed and memory usage when using Rust.
 
-## ✔️ Functionality and User Guide
-### Prerequisites
-First, ensure your Rust environment is already set up. You can verify the installation by running:
-```bash
-cargo --version
-```
-### Dependencies
-Run the following commands in your terminal to add necessary dependencies. These commands modify the Cargo.toml file to include required libraries:
-```bash
-cargo add clap --features derive
-cargo add rusqlite
-cargo add csv
-```
-### Building the Project
-To compile and build the project, navigate to the project root directory and run:
-```bash
-cargo build --release
-```
-### Setting the Path
-Export the release folder to your path so you can run the CLI commands directly from any location. Adjust the path to match your setup:
-```bash
-export PATH=$PATH:$(pwd)/target/release
-```
-### Using the Tool
-This tool supports four main commands:
-- **Create** (`-c`): Creates a new table.
-- **Load** (`-l`): Loads data from a CSV file into a specified table.
-- **Query** (`-q`): Executes an SQL query.
-- **Delete** (`-d`): Deletes a specified table.
+## ✔️ Findings
 
-Each command can be accessed with both its full name and its short alias.
+### Performance Comparison
 
-### Command Overview
-For a quick overview of available commands, you can use:
-```bash
-sqlite -h
-```
-![Commend Output](command.png)
-### Examples of Commands
-To create a new table, use the `-c` flag:
-```bash
-sqlite -c name_age_table
-```
-To load data from a CSV file into the table, use the -l flag and specify the table name and file path:
-```bash
-sqlite -l name_age_table ../data/sample_data.csv
-```
-To execute a query on the table, use the -q flag:
-```bash
-sqlite -q "SELECT * FROM name_age_table"
-```
-To delete a table, use the -d flag:
-```bash
-sqlite -d name_age_table
-```
-![Examples Output](examples.png)
-### Testing
-This project includes automated tests located in the tests/cli_tests.rs file. These tests verify the functionality of each command (Create, Load, Query, and Delete).
+| Metric            | Python                | Rust                  |
+|-------------------|-----------------------|-----------------------|
+| Execution Time    | 0.85 ms               | 0.25 ms               |
+| Memory Usage      | 52368 KB              | 16384 KB              |
+| Average Age       | 49.23                 | 49.23                 |
 
-To run the tests, execute:
-```bash
-cargo test
-```
-![Tests Output](tests.png)
+
+### Analysis
+
+- **Execution Time**: Rust completes the task faster (0.25 ms) than Python (0.85 ms), showing greater efficiency in handling CPU-intensive operations.
+- **Memory Usage**: Rust uses less memory (16,384 KB) than Python (52,368 KB), making it more suitable for resource-constrained environments.
+- **Accuracy**: Both implementations produce the same average age (49.23), ensuring that the data processing logic is consistent across languages.
