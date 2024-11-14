@@ -20,7 +20,6 @@ This project aims to compare the performance of data processing scripts written 
 | Memory Usage      | 52368 KB              | 16384 KB              |
 | Average Age       | 49.23                 | 49.23                 |
 
-
 ### Analysis
 
 - **Execution Time**: Rust completes the task faster (0.25 ms) than Python (0.85 ms), showing greater efficiency in handling CPU-intensive operations.
